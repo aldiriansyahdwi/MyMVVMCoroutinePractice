@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(
             this,
-            MainViewModelFactory(ApiHelper(ApiClient.instance))
+            MainViewModelFactory(ApiHelper(ApiClient.getInstance(this)), application)
         )[MainViewModel::class.java]
 
         setupObservers()
